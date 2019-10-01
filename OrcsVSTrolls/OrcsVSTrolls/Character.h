@@ -11,6 +11,7 @@ public :
 	virtual void attack(Character * defender) = 0;
 
 protected:
+	int m_playerIndex;
 	int m_lifePoint;
 	int m_manaPoint;
 };

@@ -7,7 +7,9 @@
 #include "Character.h"
 
 class Troll : public Character {
-
+public:
+	Troll();
+	~Troll();
 };
 
 #endif // !TROLL
