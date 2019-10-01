@@ -1,5 +1,8 @@
-﻿  Main.cpp
+﻿  Attack.cpp
+  Main.cpp
+  Melee.cpp
   Orc.cpp
+  Spell.cpp
   Troll.cpp
   Generating Code...
   OrcsVSTrolls.vcxproj -> G:\Gameplay Programming\Orcs-Vs-Trolls\OrcsVSTrolls\Debug\OrcsVSTrolls.exe
