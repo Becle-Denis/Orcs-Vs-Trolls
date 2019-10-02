@@ -5,7 +5,7 @@
 
 #include "GameObject.h"
 
-class Shield : public gameObject {
+class Shield : public GameObject {
 
 private : 
 	int livePoint;

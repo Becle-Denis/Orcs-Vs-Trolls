@@ -6,7 +6,7 @@
 #include <iostream>
 #include "GameObject.h"
 
-class Attack : public gameObject {
+class Attack : public GameObject {
 public :
 
 };

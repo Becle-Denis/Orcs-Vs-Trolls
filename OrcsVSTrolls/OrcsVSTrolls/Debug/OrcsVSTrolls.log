@@ -1,7 +1,9 @@
 ﻿  Attack.cpp
+  GameObject.cpp
   Main.cpp
   Melee.cpp
   Orc.cpp
+  Shield.cpp
   Spell.cpp
   Troll.cpp
   Generating Code...

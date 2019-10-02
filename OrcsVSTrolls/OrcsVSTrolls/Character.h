@@ -6,7 +6,7 @@
 #include <iostream>
 #include "GameObject.h"
 
-class Character : public gameObject {
+class Character : public GameObject {
 public :
 	virtual void attack(Character * defender) = 0;
 

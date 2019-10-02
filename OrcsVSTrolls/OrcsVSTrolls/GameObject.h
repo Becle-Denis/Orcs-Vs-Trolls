@@ -5,10 +5,12 @@
 
 #include <iostream>
 
-class gameObject
+class GameObject
 {
 public:
-	virtual std::string descriptionToString() = 0;
+	static GameObject* userChoice(GameObject* objects[], int const NUMBER_OF_OBJECT, std::string title = "Make a choice");
+	virtual std::string toString() = 0;
+	virtual std::string toStringDescription() = 0;
 };
 
 
