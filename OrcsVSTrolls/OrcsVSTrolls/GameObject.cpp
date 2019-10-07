@@ -1,11 +1,12 @@
 #include "GameObject.h"
 
+
 GameObject* GameObject::userChoice(GameObject* objects[], int const NUMBER_OF_OBJECT, std::string title)
 {
-	int userInput;
 	int objectIndex;
 	bool validInput = false;
 	do {
+		int userInput = 0;
 		std::cout << "----- " << title << " -----" << std::endl;
 		for (int i = 0; i < NUMBER_OF_OBJECT; i++)
 		{
