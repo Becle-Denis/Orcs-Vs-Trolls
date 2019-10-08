@@ -18,12 +18,12 @@ int main()
 {
 
 	Orc t1("DENS");
-	Orc t2;
+	Human t2;
 
-	std::vector<GameObject*> arr;
+	std::vector<Character*> arr;
 	arr.push_back(&t1);
 	arr.push_back(&t2);
 
 
-	std::cout << Interface::userChoice(arr)->toStringDescription();
+	std::cout << Interface::userCharacterChoice(arr)->toStringDescription();
 }

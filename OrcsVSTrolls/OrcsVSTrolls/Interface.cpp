@@ -39,3 +39,23 @@ GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string 
 
 	return objects.at(objectIndex);
 }
+
+Character* Interface::userCharacterChoice(std::vector<Character*> characters, std::string title)
+{
+	std::vector<GameObject*> objects;
+	for (Character* char_ptr : characters)
+	{
+		objects.push_back(char_ptr);
+	}
+	return static_cast<Character*>(userChoice(objects, title));
+}
+
+Attack* Interface::userAttackChoice(std::vector<Attack*> attacks, std::string title)
+{
+	std::vector<GameObject*> objects;
+	for (Attack* atk_ptr : attacks)
+	{
+		objects.push_back(atk_ptr);
+	}
+	return static_cast<Attack*>(userChoice(objects, title));
+}

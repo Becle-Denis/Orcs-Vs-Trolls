@@ -14,6 +14,8 @@ class Interface
 {
 public:
 	static GameObject* userChoice(std::vector<GameObject*> objects, std::string title = "Make a choice");
+	static Character* userCharacterChoice(std::vector<Character*> characters, std::string title = "Choose a Character");
+	static Attack* userAttackChoice(std::vector<Attack*> attack, std::string title = "Choose an Attack");
 };
 
 
