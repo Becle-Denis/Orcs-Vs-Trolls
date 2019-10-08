@@ -15,8 +15,8 @@
 int main()
 {
 
-	Human t1("DENS");
-	Human t2;
+	Orc t1("DENS");
+	Orc t2;
 
 	Character* ptr_char = &t1;
 
