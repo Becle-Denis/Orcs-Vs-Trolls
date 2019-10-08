@@ -1,29 +1,3 @@
-﻿  Attack.cpp
-  BigFireBlast.cpp
-  BigPunch.cpp
-  Character.cpp
-  FireBall.cpp
-  FireBlast.cpp
-  HalfMagicShield.cpp
-  Human.cpp
-  IceBall.cpp
-  Interface.cpp
-  IronShield.cpp
-  MagicShield.cpp
-  Main.cpp
-  Melee.cpp
-  Orc.cpp
-  Punch.cpp
-  Regeneration.cpp
-  RegenerationSpell.cpp
-  Shield.cpp
-  Spell.cpp
-  Génération de code en cours...
-  Compilation en cours...
-  StoneRain.cpp
-  Tap.cpp
-  Tornado.cpp
-  Troll.cpp
-  Twisted.cpp
-  Génération de code en cours...
+﻿  Game.cpp
+C:\Users\Denis\Documents\DUETI\WORK\gameplay\Orcs-Vs-Trolls\OrcsVSTrolls\OrcsVSTrolls\Game.cpp(53,13): warning C4551:  liste d'arguments manquante dans l'appel de fonction
   OrcsVSTrolls.vcxproj -> C:\Users\Denis\Documents\DUETI\WORK\gameplay\Orcs-Vs-Trolls\OrcsVSTrolls\Debug\OrcsVSTrolls.exe

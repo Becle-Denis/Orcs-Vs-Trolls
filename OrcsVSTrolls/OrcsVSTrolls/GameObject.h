@@ -11,8 +11,6 @@ public:
 	virtual std::string toString() = 0;
 	virtual std::string toStringDescription() = 0;
 
-private:
-	int test;
 };
 
 

@@ -7,6 +7,7 @@
 #include "GameObject.h"
 #include "Shield.h"
 #include "Attack.h"
+#include <vector>
 
 
 
@@ -43,7 +44,7 @@ public:
 	virtual void gainMana(int manaPoint);
 
 	//Actions 
-	void playTurn(Character* PlayersPtr[], int const NUMBER_OF_PLAYER);
+	void playTurn(std::vector<Character*> PlayersPtr);
 
 	std::string toString() = 0;
 	std::string toStringDescription() = 0;

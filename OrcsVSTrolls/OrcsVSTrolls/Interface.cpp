@@ -69,3 +69,18 @@ Shield* Interface::userShieldChoice(std::vector<Shield*> shields, std::string ti
 	}
 	return static_cast<Shield*>(userChoice(objects, title));
 }
+
+void Interface::display(std::string string)
+{
+	std::cout << string << std::endl;
+}
+
+void Interface::clear()
+{
+	system("CLS");
+}
+
+void Interface::pause()
+{
+	system("PAUSE");
+}

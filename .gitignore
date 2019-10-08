@@ -351,3 +351,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+OrcsVSTrolls/.vs/OrcsVSTrolls/v16/.suo
+OrcsVSTrolls/.vs/OrcsVSTrolls/v16/.suo
+OrcsVSTrolls/.vs/OrcsVSTrolls/v16/.suo
+OrcsVSTrolls/.vs/OrcsVSTrolls/v16/ipch/AutoPCH/5159937990d2c6ef/INTERFACE.ipch
+OrcsVSTrolls/.vs/OrcsVSTrolls/v16/.suo
+*.exe
+*.obj

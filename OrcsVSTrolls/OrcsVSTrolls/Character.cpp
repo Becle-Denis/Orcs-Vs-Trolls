@@ -107,9 +107,9 @@ std::string Character::toStringChatacterAttribute()
 
 //--------------------------------Actions---------------------------------------------------
 
-void Character::playTurn(Character* PlayersPtr[], int const NUMBER_OF_PLAYER)
+void Character::playTurn(std::vector<Character*> PlayersPtr)
 {
-	std::cout << "!!IMPLEMENT Character::playTurn(Character* PlayersPtr[], int const NUMBER_OF_PLAYER)" << std::endl;
+	std::cout << "!!IMPLEMENT void Character::playTurn(std::vector<Character*> PlayersPtr)" << std::endl;
 }
 
 

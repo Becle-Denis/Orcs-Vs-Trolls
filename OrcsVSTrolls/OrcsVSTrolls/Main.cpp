@@ -3,14 +3,13 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+
 #include "Character.h"
 #include "Orc.h"
 #include "Troll.h"
 #include "Human.h"
-#include "Attack.h"
-#include "GameObject.h"
-#include "Interface.h"
-#include <vector>
+#include "Game.h"
 
 
 //Testing 
@@ -24,6 +23,7 @@ int main()
 	arr.push_back(&t1);
 	arr.push_back(&t2);
 
+	Game game(arr);
+	game.play();
 
-	std::cout << Interface::userCharacterChoice(arr)->toStringDescription();
 }
