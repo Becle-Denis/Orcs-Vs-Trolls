@@ -8,7 +8,7 @@
 #include "Shield.h"
 //#include "Character.h" integration Conflict 
 
-class Character; //further declaration , avoid conflict 
+class Character; //further declaration to avoid conflict 
 
 class Attack : public GameObject {
 public :
