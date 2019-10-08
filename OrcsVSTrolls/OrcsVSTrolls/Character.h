@@ -33,9 +33,17 @@ public:
 	/// <param name="ptr_attack">Attack</param>
 	virtual void attackCharacter(Character* ptr_attacker, Character* ptr_defender, Attack* ptr_attack);
 
+	//pure virtual function
+	virtual std::string getType() = 0;
+
 	// Getters 
 	std::string getName() const;
+	int getLifePoint();
+	int getManaPoint();
+	int getIndexPlayer();
+	bool isAlive();
 	virtual Shield* getSelectedShieldPtr();
+
 
 	// modifier
 	void takeDamage(int damagePoint);
@@ -46,8 +54,10 @@ public:
 	//Actions 
 	void playTurn(std::vector<Character*> PlayersPtr);
 
-	std::string toString() = 0;
-	std::string toStringDescription() = 0;
+	//Overrided GameObject functions
+	std::string toString();
+	std::string toStringDescription();
+
 
 protected:
 
@@ -55,13 +65,14 @@ protected:
 	int m_manaPoint; // points of Mana
 	bool m_isAlive; // true if the character is alive 
 
-	std::string toStringChatacterAttribute();
+	
 	virtual void endOfTurn();
 
 private:
 	std::string m_name; //name of the character 
 	int static nbOfPlayerCharacters; //number of player-controlled characters
 	int m_playerIndex; //index of the player who control the character, -1 for AI
+	std::string toStringChatacterAttribute();
 
 
 };

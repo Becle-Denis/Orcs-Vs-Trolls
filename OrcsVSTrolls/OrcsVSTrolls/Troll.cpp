@@ -18,19 +18,14 @@ Troll::~Troll()
 
 }
 
+//--------------------------------Getters---------------------------------------------------
 
-
-//--------------------------------toString--------------------------------------------------
-
-std::string Troll::toString()
+std::string Troll::getType()
 {
-	return "TROLL "+getName();
+	return "TROLL";
 }
 
-std::string Troll::toStringDescription()
-{
-	return toString()+"\n"+Character::toStringChatacterAttribute();
-}
+
 
 //--------------------------------Actions---------------------------------------------------
 

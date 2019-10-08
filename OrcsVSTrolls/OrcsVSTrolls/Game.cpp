@@ -30,6 +30,10 @@ void Game::play()
 			Interface::display("");
 
 			Interface::display("Turn " + std::to_string(m_tour) + " : " +ptr_char->toString());
+			if (ptr_char->getIndexPlayer() != -1)
+			{
+				Interface::display("Player " + std::to_string(ptr_char->getIndexPlayer()) +" take Control");
+			}
 			Interface::pause();
 
 			ptr_char->playTurn(m_characters);
@@ -50,7 +54,7 @@ void Game::play()
 	Interface::clear();
 	Interface::display(this->toString());
 	Interface::display("\nGAME OVER\nWINNER : " + m_characters.at(winner)->toString());
-	Interface::pause;
+	Interface::pause();
 
 }
 
@@ -61,6 +65,69 @@ int Game::winner()
 
 std::string Game::toString()
 {
-	return "";
+	std::vector<std::string> names;
+	std::vector<std::string> types;
+	std::vector<bool> lifeStatus;
+	std::vector<int> lifePoints;
+	std::vector<int> manaPoints;
+
+	//general information 
+	std::string s = "GAME\n";
+	s += "Turn " + std::to_string(m_tour) + "\nCharacters\n";
+
+	//get players Informations 
+	for (Character* ptr_char : m_characters)
+	{
+		names.push_back(ptr_char->getName());
+		types.push_back(ptr_char->getType());
+		lifeStatus.push_back(ptr_char->isAlive());
+		lifePoints.push_back(ptr_char->getLifePoint());
+		manaPoints.push_back(ptr_char->getManaPoint());
+	}
+
+	//name
+	for (std::string name : names)
+	{
+		s += name + "\t\t|";
+	}
+	s += "\n";
+
+	//type
+	for (std::string type : types)
+	{
+		s += type + "\t\t|";
+	}
+	s += "\n";
+
+	//lifeStatus
+	for (bool status : lifeStatus)
+	{
+		if (status)
+		{
+			s += "Alive\t\t|";
+		}
+		else
+		{
+			s += "DEAD\t\t|";
+		}
+	}
+	s += "\n";
+
+	//lifePoint
+	for (int lp : lifePoints)
+	{
+		s += "Life : " + std::to_string(lp) + "\t|";
+	}
+	s += "\n";
+
+	//manaPoint
+	for (int mp : manaPoints)
+	{
+		s += "Mana : " + std::to_string(mp) + "\t|";
+	}
+	s += "\n";
+	
+
+	return s;
 }
 

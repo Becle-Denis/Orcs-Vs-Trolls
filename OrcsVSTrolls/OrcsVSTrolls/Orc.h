@@ -24,13 +24,12 @@ public:
 	~Orc();
 
 	//Overrided Character functions 
+	std::string getType();
 	void endOfTurn();
 	void gainMana(int manaPoint);
 	bool spendMana(int manaPoint);
+	
 
-	//Overrided GameObject functions
-	std::string toString();
-	std::string toStringDescription();
 };
 
 #endif // !ORC

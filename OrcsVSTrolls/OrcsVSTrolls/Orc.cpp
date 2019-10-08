@@ -19,17 +19,11 @@ Orc::~Orc()
 
 }
 
+//--------------------------------Getters---------------------------------------------------
 
-//--------------------------------toString--------------------------------------------------
-
-std::string Orc::toString()
+std::string Orc::getType()
 {
-	return "ORC " + getName();
-}
-
-std::string Orc::toStringDescription()
-{
-	return toString() + "\n" + Character::toStringChatacterAttribute();
+	return "ORC";
 }
 
 //--------------------------------Actions---------------------------------------------------

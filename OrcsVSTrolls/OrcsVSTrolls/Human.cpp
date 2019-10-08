@@ -19,17 +19,11 @@ Human::~Human()
 
 }
 
+//--------------------------------Getters---------------------------------------------------
 
-//--------------------------------toString--------------------------------------------------
-
-std::string Human::toString()
+std::string Human::getType()
 {
-	return "HUMAN " + getName();
-}
-
-std::string Human::toStringDescription()
-{
-	return toString() + "\n" + Character::toStringChatacterAttribute();
+	return "HUMAN";
 }
 
 //--------------------------------Actions---------------------------------------------------

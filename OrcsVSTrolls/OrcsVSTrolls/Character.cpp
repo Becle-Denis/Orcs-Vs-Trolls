@@ -28,6 +28,25 @@ std::string Character::getName() const
 	return m_name;
 }
 
+int Character::getLifePoint()
+{
+	return m_lifePoint;
+}
+
+int Character::getManaPoint()
+{
+	return m_manaPoint;
+}
+
+int Character::getIndexPlayer()
+{
+	return m_playerIndex;
+}
+
+bool Character::isAlive()
+{
+	return m_isAlive;
+}
 
 //--------------------------------Modifier--------------------------------------------------
 
@@ -78,6 +97,18 @@ bool Character::spendMana(int manaPoint)
 
 //--------------------------------toString--------------------------------------------------
 
+
+//--------------------------------toString--------------------------------------------------
+
+std::string Character::toString()
+{
+	return getType() + " " + getName();
+}
+
+std::string Character::toStringDescription()
+{
+	return toString() + "\n" + toStringChatacterAttribute();
+}
 
 std::string Character::toStringChatacterAttribute()
 {
