@@ -46,6 +46,16 @@ void Orc::gainMana(int manaPoint)
 	}
 }
 
+bool Orc::spendMana(int manaPoint)
+{
+	manaPoint -= 1;
+	if (manaPoint < 0)
+	{
+		manaPoint = 0;
+	}
+	return Character::spendMana(manaPoint);
+}
+
 void Orc::endOfTurn()
 {
 	this->gainMana(3);

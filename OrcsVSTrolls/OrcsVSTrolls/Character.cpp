@@ -72,6 +72,7 @@ bool Character::spendMana(int manaPoint)
 		m_manaPoint -= manaPoint;
 		return true;
 	}
+	return false;
 }
 
 

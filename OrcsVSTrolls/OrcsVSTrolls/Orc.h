@@ -11,7 +11,7 @@
 /// Charateristics of Orc :
 /// - initial LivePoint 12
 /// - Initial Mana 7
-/// - MagicAttack +1 
+/// - MagicAttack +1 PV -1 cost
 /// - end of turn : +3Mana 
 /// - Max Mana 10
 /// </summary>
@@ -26,6 +26,7 @@ public:
 	//Overrided Character functions 
 	void endOfTurn();
 	void gainMana(int manaPoint);
+	bool spendMana(int manaPoint);
 
 	//Overrided GameObject functions
 	std::string toString();

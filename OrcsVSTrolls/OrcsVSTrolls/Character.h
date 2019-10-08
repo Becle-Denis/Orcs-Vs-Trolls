@@ -39,7 +39,7 @@ public:
 	// modifier
 	void takeDamage(int damagePoint);
 	void gainHealth(int healthPoint);
-	bool spendMana(int manaPoint);
+	virtual bool spendMana(int manaPoint);
 	virtual void gainMana(int manaPoint);
 
 	//Actions 

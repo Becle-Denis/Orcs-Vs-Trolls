@@ -28,7 +28,7 @@ int main()
 	std::cout << t2.toStringDescription() << std::endl;
 
 	ptr_char->takeDamage(15);
-	t2.gainMana(12);
+	t2.spendMana(5);
 
 	std::cout << "\n---------------------------\n";
 
