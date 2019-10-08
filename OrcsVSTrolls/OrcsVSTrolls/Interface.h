@@ -16,6 +16,7 @@ public:
 	static GameObject* userChoice(std::vector<GameObject*> objects, std::string title = "Make a choice");
 	static Character* userCharacterChoice(std::vector<Character*> characters, std::string title = "Choose a Character");
 	static Attack* userAttackChoice(std::vector<Attack*> attack, std::string title = "Choose an Attack");
+	static Shield* userShieldChoice(std::vector<Shield*> shields, std::string title = "Choose a Shield");
 };
 
 

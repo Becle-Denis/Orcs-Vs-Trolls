@@ -59,3 +59,13 @@ Attack* Interface::userAttackChoice(std::vector<Attack*> attacks, std::string ti
 	}
 	return static_cast<Attack*>(userChoice(objects, title));
 }
+
+Shield* Interface::userShieldChoice(std::vector<Shield*> shields, std::string title)
+{
+	std::vector<GameObject*> objects;
+	for (Shield* shd_ptr : shields)
+	{
+		objects.push_back(shd_ptr);
+	}
+	return static_cast<Shield*>(userChoice(objects, title));
+}
