@@ -9,6 +9,7 @@
 #include "Human.h"
 #include "Attack.h"
 #include "GameObject.h"
+#include "Interface.h"
 
 
 //Testing 
@@ -18,20 +19,7 @@ int main()
 	Orc t1("DENS");
 	Orc t2;
 
-	Character* ptr_char = &t1;
+	GameObject* arr[] = { &t1,&t2 };
 
-	std::cout << t1.toString() << "\n" << t2.toString() << "\n";
-
-	std::cout << "\n---------------------------\n";
-
-	std::cout << ptr_char->toStringDescription() << "\n\n";
-	std::cout << t2.toStringDescription() << std::endl;
-
-	ptr_char->takeDamage(15);
-	t2.spendMana(5);
-
-	std::cout << "\n---------------------------\n";
-
-	std::cout << ptr_char->toStringDescription() << "\n\n";
-	std::cout << t2.toStringDescription() << std::endl;
+	Interface::userChoice(arr,2);
 }

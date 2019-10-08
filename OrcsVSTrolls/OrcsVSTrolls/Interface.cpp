@@ -1,7 +1,6 @@
-#include "GameObject.h"
+#include "Interface.h"
 
-
-GameObject* GameObject::userChoice(GameObject* objects[], int const NUMBER_OF_OBJECT, std::string title)
+GameObject* Interface::userChoice(GameObject* objects[], int const NUMBER_OF_OBJECT, std::string title)
 {
 	int objectIndex;
 	bool validInput = false;
@@ -35,4 +34,3 @@ GameObject* GameObject::userChoice(GameObject* objects[], int const NUMBER_OF_OB
 
 	return objects[objectIndex];
 }
-
