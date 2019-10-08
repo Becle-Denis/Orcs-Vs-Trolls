@@ -28,6 +28,7 @@ public:
 	void endOfTurn();
 	void gainMana(int manaPoint);
 	bool spendMana(int manaPoint);
+	void attackCharacter(Character* ptr_defender, Attack* ptr_attack);
 	
 
 };

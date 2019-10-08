@@ -141,12 +141,20 @@ std::string Character::toStringChatacterAttribute()
 void Character::playTurn(std::vector<Character*> PlayersPtr)
 {
 	std::cout << "!!IMPLEMENT void Character::playTurn(std::vector<Character*> PlayersPtr)" << std::endl;
+
+	//choose a player to attack or change shield
+
+	//attack 
+
+	//end of turn 
+	endOfTurn();
 }
 
 
-void Character::attackCharacter(Character* ptr_attacker, Character* ptr_defender, Attack* ptr_attack)
+void Character::attackCharacter(Character* ptr_defender, Attack* ptr_attack)
 {
-	std::cout << "!!IMPLEMENT Character::attackCharacter(Character* ptr_attacker, Character* ptr_defender, Attack* ptr_attack)" << std::endl;
+	Shield* defenderShield = ptr_defender->getSelectedShieldPtr();
+	ptr_attack->doAttack(this,ptr_defender,defenderShield);
 }
 
 
