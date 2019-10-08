@@ -1,25 +1,26 @@
 #include "Interface.h"
 
-GameObject* Interface::userChoice(GameObject* objects[], int const NUMBER_OF_OBJECT, std::string title)
+GameObject* Interface::userChoice(GameObject* objects[], int const NUMBER_OF_OBJECTS, std::string title)
 {
 	int objectIndex;
 	bool validInput = false;
 	do {
 		int userInput = 0;
 		std::cout << "----- " << title << " -----" << std::endl;
-		for (int i = 0; i < NUMBER_OF_OBJECT; i++)
+		for (int i = 0; i < NUMBER_OF_OBJECTS; i++)
 		{
 			int j = i + 1;
 			std::cout << j << " - " << objects[i]->toString() << " ( -" << j << "  for details )" << std::endl;
 		}
+
 		std::cin >> userInput;
 
-		if (userInput > 0 && userInput <= NUMBER_OF_OBJECT)
+		if (userInput > 0 && userInput <= NUMBER_OF_OBJECTS)
 		{
 			validInput = true;
 			objectIndex = userInput - 1;
 		}
-		else if (userInput < 0 && userInput >= -NUMBER_OF_OBJECT)
+		else if (userInput < 0 && userInput >= -NUMBER_OF_OBJECTS)
 		{
 			objectIndex = (userInput * -1) - 1;
 			std::cout << "Details (" << userInput << ")" << std::endl;
