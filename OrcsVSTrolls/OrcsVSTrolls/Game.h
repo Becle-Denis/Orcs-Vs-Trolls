@@ -18,7 +18,6 @@ public:
 private:
 	std::vector<Character*> m_characters;
 	int m_tour;
-
 	std::string toString();
 };
 

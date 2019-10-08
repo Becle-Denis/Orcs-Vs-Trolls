@@ -60,6 +60,20 @@ void Game::play()
 
 int Game::winner()
 {
+	int win = -1;
+	int nbAlive = 0;
+	for (unsigned int i = 0; i < m_characters.size(); i++)
+	{
+		if (m_characters.at(i)->isAlive())
+		{
+			win = static_cast<int>(i);
+			nbAlive++;
+		}
+	}
+	if (nbAlive == 0)
+	{
+		return win;
+	}
 	return -1;
 }
 
