@@ -43,8 +43,7 @@ public:
 	virtual void gainMana(int manaPoint);
 
 	//Actions 
-	void playTurn();
-	virtual void endOfTurn();
+	void playTurn(Character* PlayersPtr[], int const NUMBER_OF_PLAYER);
 
 	std::string toString() = 0;
 	std::string toStringDescription() = 0;
@@ -56,6 +55,7 @@ protected:
 	bool m_isAlive; // true if the character is alive 
 
 	std::string toStringChatacterAttribute();
+	virtual void endOfTurn();
 
 private:
 	std::string m_name; //name of the character 

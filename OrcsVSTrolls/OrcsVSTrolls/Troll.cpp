@@ -1,5 +1,7 @@
 #include "Troll.h"
 
+
+//--------------------------------Constructor--------------------------------------------------
 Troll::Troll() :
 	Character("Enemy", 20, 2, false)
 {
@@ -16,6 +18,22 @@ Troll::~Troll()
 
 }
 
+
+
+//--------------------------------toString--------------------------------------------------
+
+std::string Troll::toString()
+{
+	return "TROLL "+getName();
+}
+
+std::string Troll::toStringDescription()
+{
+	return toString()+"\n"+Character::toStringChatacterAttribute();
+}
+
+//--------------------------------Actions---------------------------------------------------
+
 void Troll::gainMana(int manaPoint)
 {
 	if (manaPoint > 0)
@@ -31,18 +49,5 @@ void Troll::gainMana(int manaPoint)
 
 void Troll::endOfTurn()
 {
-	this->gainMana(1);
 	this->gainHealth(1);
-}
-
-//--------------------------------toString--------------------------------------------------
-
-std::string Troll::toString()
-{
-	return "Troll "+getName();
-}
-
-std::string Troll::toStringDescription()
-{
-	return toString()+"\n"+Character::toStringChatacterAttribute();
 }

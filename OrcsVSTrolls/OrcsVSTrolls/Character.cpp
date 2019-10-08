@@ -50,7 +50,7 @@ void Character::gainMana(int manaPoint)
 
 void Character::takeDamage(int damagePoint)
 {
-	if (damagePoint < 0)
+	if (damagePoint > 0)
 	{
 		m_lifePoint -= damagePoint;
 	}
@@ -106,19 +106,29 @@ std::string Character::toStringChatacterAttribute()
 
 //--------------------------------Actions---------------------------------------------------
 
-void Character::endOfTurn()
+void Character::playTurn(Character* PlayersPtr[], int const NUMBER_OF_PLAYER)
 {
-
+	std::cout << "!!IMPLEMENT Character::playTurn(Character* PlayersPtr[], int const NUMBER_OF_PLAYER)" << std::endl;
 }
+
 
 void Character::attackCharacter(Character* ptr_attacker, Character* ptr_defender, Attack* ptr_attack)
 {
-	
+	std::cout << "!!IMPLEMENT Character::attackCharacter(Character* ptr_attacker, Character* ptr_defender, Attack* ptr_attack)" << std::endl;
 }
+
 
 Shield* Character::getSelectedShieldPtr()
 {
+	std::cout << "!!IMPLEMENT Character::getSelectedShieldPtr()" << std::endl;
 	return nullptr;
+}
+
+
+
+void Character::endOfTurn()
+{
+
 }
 
 

@@ -6,6 +6,7 @@
 #include "Character.h"
 #include "Orc.h"
 #include "Troll.h"
+#include "Human.h"
 #include "Attack.h"
 #include "GameObject.h"
 
@@ -14,12 +15,20 @@
 int main()
 {
 
-	Troll t1("DENS");
-	Troll t2;
+	Human t1("DENS");
+	Human t2;
 
 	Character* ptr_char = &t1;
 
 	std::cout << t1.toString() << "\n" << t2.toString() << "\n";
+
+	std::cout << "\n---------------------------\n";
+
+	std::cout << ptr_char->toStringDescription() << "\n\n";
+	std::cout << t2.toStringDescription() << std::endl;
+
+	ptr_char->takeDamage(15);
+	t2.gainMana(12);
 
 	std::cout << "\n---------------------------\n";
 

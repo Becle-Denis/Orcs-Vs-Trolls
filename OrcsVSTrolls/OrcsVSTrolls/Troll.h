@@ -11,31 +11,25 @@
 /// The trolls are not good with magic stuff but regenerate each turn 
 /// Charateristics of Troll : 
 /// - initial LivePoint 20
-/// - Initial Mana 2
+/// - Initial Mana 4
 /// - MeleeAttack +1PV 
 /// - Max Mana 5 
-/// - End of turn : +1PV / +1Mana 
+/// - End of turn : +1PV 
 /// </summary>
 class Troll : public Character {
 public:
-	/// <summary>
-	/// Constructor for AI troll
-	/// </summary>
-	Troll();
-
-	/// <summary>
-	/// Constructors for player troll
-	/// </summary>
-	/// <param name="name"></param>
-	Troll(std::string name);
+	
+	Troll(); // Constructor for AI troll
+	Troll(std::string name); // Constructors for player troll
 
 	~Troll();
 
 
-	//Overrided functions 
-
+	//Overrided Character functions 
 	void endOfTurn();
 	void gainMana(int manaPoint);
+
+	//Overrided GameObject functions
 	std::string toString();
 	std::string toStringDescription();
 
