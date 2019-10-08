@@ -10,6 +10,7 @@
 #include "Attack.h"
 #include "GameObject.h"
 #include "Interface.h"
+#include <vector>
 
 
 //Testing 
@@ -19,7 +20,10 @@ int main()
 	Orc t1("DENS");
 	Orc t2;
 
-	GameObject* arr[] = { &t1,&t2 };
+	std::vector<GameObject*> arr;
+	arr.push_back(&t1);
+	arr.push_back(&t2);
 
-	Interface::userChoice(arr,2);
+
+	std::cout << Interface::userChoice(arr)->toStringDescription();
 }

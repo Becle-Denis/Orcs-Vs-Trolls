@@ -1,30 +1,32 @@
 #include "Interface.h"
+#include <iostream>
 
-GameObject* Interface::userChoice(GameObject* objects[], int const NUMBER_OF_OBJECTS, std::string title)
+GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string title)
 {
 	int objectIndex;
+	int size = static_cast<int>(objects.size());
 	bool validInput = false;
 	do {
 		int userInput = 0;
 		std::cout << "----- " << title << " -----" << std::endl;
-		for (int i = 0; i < NUMBER_OF_OBJECTS; i++)
+		for (int i = 0; i < size; i++)
 		{
 			int j = i + 1;
-			std::cout << j << " - " << objects[i]->toString() << " ( -" << j << "  for details )" << std::endl;
+			std::cout << j << " - " << objects.at(i)->toString() << " ( -" << j << "  for details )" << std::endl;
 		}
 
 		std::cin >> userInput;
 
-		if (userInput > 0 && userInput <= NUMBER_OF_OBJECTS)
+		if (userInput > 0 && userInput <= size)
 		{
 			validInput = true;
 			objectIndex = userInput - 1;
 		}
-		else if (userInput < 0 && userInput >= -NUMBER_OF_OBJECTS)
+		else if (userInput < 0 && userInput >= -size)
 		{
 			objectIndex = (userInput * -1) - 1;
 			std::cout << "Details (" << userInput << ")" << std::endl;
-			std::cout << objects[objectIndex]->toStringDescription() << std::endl << std::endl;
+			std::cout << objects.at(objectIndex)->toStringDescription() << std::endl << std::endl;
 			system("PAUSE");
 		}
 		else {
@@ -33,5 +35,7 @@ GameObject* Interface::userChoice(GameObject* objects[], int const NUMBER_OF_OBJ
 		}
 	} while (!validInput);
 
-	return objects[objectIndex];
+
+
+	return objects.at(objectIndex);
 }

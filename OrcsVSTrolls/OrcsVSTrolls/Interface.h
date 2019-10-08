@@ -8,11 +8,12 @@
 #include "Character.h" 
 #include "Attack.h"
 #include "Shield.h"
+#include <vector>
 
 class Interface
 {
 public:
-	static GameObject* userChoice(GameObject* objects[], int const NUMBER_OF_OBJECTS, std::string title = "Make a choice");
+	static GameObject* userChoice(std::vector<GameObject*> objects, std::string title = "Make a choice");
 };
 
 
