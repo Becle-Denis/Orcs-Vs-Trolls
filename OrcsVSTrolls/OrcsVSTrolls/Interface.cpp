@@ -5,6 +5,12 @@ GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string 
 {
 	int objectIndex;
 	int size = static_cast<int>(objects.size());
+
+	if (size == 0)
+	{
+		return nullptr;
+	}
+
 	bool validInput = false;
 	do {
 		int userInput = 0;

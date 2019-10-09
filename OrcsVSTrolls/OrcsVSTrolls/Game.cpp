@@ -25,21 +25,25 @@ void Game::play()
 		//each player can play
 		for (Character* ptr_char : m_characters)
 		{
-			Interface::clear();
-			Interface::display(this->toString());
-			Interface::display("");
-
-			Interface::display("Turn " + std::to_string(m_tour) + " : " +ptr_char->toString());
-			if (ptr_char->getIndexPlayer() != -1)
+			if (ptr_char->isAlive())
 			{
-				Interface::display("Player " + std::to_string(ptr_char->getIndexPlayer()) +" take Control");
+				Interface::clear();
+				Interface::display(this->toString());
+				Interface::display("");
+
+				Interface::display("Turn " + std::to_string(m_tour) + " : " + ptr_char->toString());
+				if (ptr_char->getIndexPlayer() != -1)
+				{
+					Interface::display("Player " + std::to_string(ptr_char->getIndexPlayer()) + " take Control");
+				}
+				Interface::pause();
+
+				ptr_char->playTurn(m_characters);
+
+				Interface::display("End of Turn " + std::to_string(m_tour) + " : " + ptr_char->toString());
+				Interface::pause();
 			}
-			Interface::pause();
 
-			ptr_char->playTurn(m_characters);
-
-			Interface::display("End of Turn " + std::to_string(m_tour) + " : " + ptr_char->toString());
-			Interface::pause();
 		}
 		Interface::clear();
 		Interface::display(this->toString());
@@ -70,7 +74,7 @@ int Game::winner()
 			nbAlive++;
 		}
 	}
-	if (nbAlive == 0)
+	if (nbAlive == 1)
 	{
 		return win;
 	}
