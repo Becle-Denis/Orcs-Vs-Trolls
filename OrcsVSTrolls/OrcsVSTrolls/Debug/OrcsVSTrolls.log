@@ -1,26 +1,6 @@
-﻿  Attack.cpp
-  BigFireBlast.cpp
-  BigPunch.cpp
-  Character.cpp
-  FireBall.cpp
-  FireBlast.cpp
-  Game.cpp
+﻿  Character.cpp
   Human.cpp
-  IceBall.cpp
-  Interface.cpp
-  Main.cpp
-  Melee.cpp
   Orc.cpp
-  Punch.cpp
-  Regeneration.cpp
-  RegenerationSpell.cpp
-  Spell.cpp
-  StoneRain.cpp
-  Tap.cpp
-  Tornado.cpp
-  Génération de code en cours...
-  Compilation en cours...
   Troll.cpp
-  Twisted.cpp
   Génération de code en cours...
   OrcsVSTrolls.vcxproj -> C:\Users\Denis\Documents\DUETI\WORK\gameplay\Orcs-Vs-Trolls\OrcsVSTrolls\Debug\OrcsVSTrolls.exe

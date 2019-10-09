@@ -66,6 +66,7 @@ void Character::gainHealth(int healthPoint)
 	if (healthPoint > 0)
 	{
 		m_lifePoint += healthPoint;
+		Interface::display(this->toString() + " + " + std::to_string(healthPoint) + " life points");
 	}
 }
 
@@ -74,6 +75,7 @@ void Character::gainMana(int manaPoint)
 	if (manaPoint > 0)
 	{
 		m_manaPoint += manaPoint;
+		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points");
 	}
 
 }
@@ -83,10 +85,12 @@ void Character::takeDamage(int damagePoint)
 	if (damagePoint > 0)
 	{
 		m_lifePoint -= damagePoint;
+		Interface::display(this->toString() + " - " + std::to_string(damagePoint) + " life points");
 	}
 
 	if (m_lifePoint <= 0)
 	{
+		Interface::display(this->toString() + "is dead ! ");
 		m_isAlive = false;
 	}
 }
@@ -97,9 +101,10 @@ bool Character::spendMana(int manaPoint)
 	{
 		return false;
 	}
-	else if (manaPoint > 0)
+	else if (manaPoint >= 0)
 	{
 		m_manaPoint -= manaPoint;
+		Interface::display(this->toString() + " - " + std::to_string(manaPoint) + " mana points");
 		return true;
 	}
 	return false;

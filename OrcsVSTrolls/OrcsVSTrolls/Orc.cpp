@@ -1,4 +1,6 @@
 #include "Orc.h"
+#include "Interface.h"
+#include <string>
 
 //--------------------------------Constructor--------------------------------------------------
 
@@ -43,6 +45,7 @@ void Orc::gainMana(int manaPoint)
 		{
 			manaPoint = 10 - m_manaPoint;
 		}
+		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points");
 		m_manaPoint += manaPoint;
 	}
 }

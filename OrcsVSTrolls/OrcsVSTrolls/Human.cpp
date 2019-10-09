@@ -38,6 +38,7 @@ void Human::gainMana(int manaPoint)
 		{
 			manaPoint = 8 - m_manaPoint;
 		}
+		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points");
 		m_manaPoint += manaPoint;
 	}
 }
