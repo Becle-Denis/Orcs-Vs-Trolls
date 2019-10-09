@@ -89,6 +89,8 @@ std::string Game::toString()
 	std::string s = "GAME\n";
 	s += "Turn " + std::to_string(m_tour) + "\nCharacters\n";
 
+	s += "------------------------------------------------------------------\n";
+
 	//get players Informations 
 	for (Character* ptr_char : m_characters)
 	{
@@ -141,6 +143,7 @@ std::string Game::toString()
 	}
 	s += "\n";
 	
+	s += "------------------------------------------------------------------\n";
 
 	return s;
 }

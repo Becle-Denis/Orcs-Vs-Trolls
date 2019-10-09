@@ -1,5 +1,6 @@
 #include "Character.h"
 #include <string>
+#include "Interface.h"
 
 int Character::nbOfPlayerCharacters = 0;
 
@@ -46,6 +47,16 @@ int Character::getIndexPlayer()
 bool Character::isAlive()
 {
 	return m_isAlive;
+}
+
+int Character::getBonusMalusMeleeAttack()
+{
+	return 0;
+}
+
+int Character::getBonusMalusMagicAttack()
+{
+	return 0;
 }
 
 //--------------------------------Modifier--------------------------------------------------
@@ -95,8 +106,6 @@ bool Character::spendMana(int manaPoint)
 }
 
 
-//--------------------------------toString--------------------------------------------------
-
 
 //--------------------------------toString--------------------------------------------------
 
@@ -138,30 +147,60 @@ std::string Character::toStringChatacterAttribute()
 
 //--------------------------------Actions---------------------------------------------------
 
-void Character::playTurn(std::vector<Character*> PlayersPtr)
+void Character::playTurn(std::vector<Character*> playersPtr)
 {
-	std::cout << "!!IMPLEMENT void Character::playTurn(std::vector<Character*> PlayersPtr)" << std::endl;
+	Interface::display("--------Attack Phase--------");
+	Character* ptr_characterToAttack;
+	Attack* ptr_attack;
 
-	//choose a player to attack or change shield
+	//choose a player to attack
 
-	//attack 
+	ptr_characterToAttack = Interface::userCharacterChoice(playersPtr,"Choose a Character to attack");
+	if (ptr_characterToAttack != nullptr)
+	{
+		//attack 
+		ptr_attack = Interface::userAttackChoice(m_attacks);
+		attackCharacter(ptr_characterToAttack,ptr_attack);
+
+
+	}
+	else
+	{
+		Interface::display(this->toString() + " want to be nice and don't attack this turn");
+	}
 
 	//end of turn 
+	Interface::display("------Regeneration Phase------");
 	endOfTurn();
 }
 
 
 void Character::attackCharacter(Character* ptr_defender, Attack* ptr_attack)
 {
-	Shield* defenderShield = ptr_defender->getSelectedShieldPtr();
-	ptr_attack->doAttack(this,ptr_defender,defenderShield);
+	if (ptr_attack != nullptr)
+	{
+		Interface::display(this->toString() + " attack " + ptr_defender->toString() + " with " + ptr_attack->toString());
+		Shield* defenderShield = ptr_defender->getSelectedShieldPtr();
+		ptr_attack->doAttack(this, ptr_defender, defenderShield,getBonusMalusMeleeAttack(),getBonusMalusMagicAttack());
+	}
+	else
+	{
+		Interface::display(this->toString() + " abort his attack against " + ptr_defender->toString());
+	}
+
 }
 
 
 Shield* Character::getSelectedShieldPtr()
 {
-	std::cout << "!!IMPLEMENT Character::getSelectedShieldPtr()" << std::endl;
-	return nullptr;
+	if (m_shields.size() > 0)
+	{
+		return m_shields.front();
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 

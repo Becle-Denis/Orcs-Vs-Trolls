@@ -26,13 +26,14 @@ std::string Orc::getType()
 	return "ORC";
 }
 
+
+int Orc::getBonusMalusMagicAttack()
+{
+	return 1;
+}
+
 //--------------------------------Actions---------------------------------------------------
 
-void Orc::attackCharacter(Character* ptr_defender, Attack* ptr_attack)
-{
-	Shield* defenderShield = ptr_defender->getSelectedShieldPtr();
-	ptr_attack->doAttack(this, ptr_defender, defenderShield,0,1);
-}
 
 void Orc::gainMana(int manaPoint)
 {

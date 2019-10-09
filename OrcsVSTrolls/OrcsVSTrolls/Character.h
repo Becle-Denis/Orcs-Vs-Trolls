@@ -30,7 +30,7 @@ public:
 	/// </summary>
 	/// <param name="ptr_defender">Defender</param>
 	/// <param name="ptr_attack">Attack</param>
-	virtual void attackCharacter(Character* ptr_defender, Attack* ptr_attack);
+	void attackCharacter(Character* ptr_defender, Attack* ptr_attack);
 
 	//pure virtual function
 	virtual std::string getType() = 0;
@@ -42,6 +42,8 @@ public:
 	int getIndexPlayer();
 	bool isAlive();
 	virtual Shield* getSelectedShieldPtr();
+	virtual int getBonusMalusMeleeAttack();
+	virtual int getBonusMalusMagicAttack();
 
 
 	// modifier
@@ -60,9 +62,13 @@ public:
 
 protected:
 
+	int m_playerIndex; //index of the player who control the character, -1 for AI
 	int m_lifePoint; // points of life
 	int m_manaPoint; // points of Mana
 	bool m_isAlive; // true if the character is alive 
+
+	std::vector<Attack*> m_attacks;
+	std::vector<Shield*> m_shields;
 
 	
 	virtual void endOfTurn();
@@ -70,7 +76,6 @@ protected:
 private:
 	std::string m_name; //name of the character 
 	int static nbOfPlayerCharacters; //number of player-controlled characters
-	int m_playerIndex; //index of the player who control the character, -1 for AI
 	std::string toStringChatacterAttribute();
 
 

@@ -9,6 +9,7 @@ GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string 
 	do {
 		int userInput = 0;
 		std::cout << "----- " << title << " -----" << std::endl;
+		std::cout << "0 - Abort" << std::endl;
 		for (int i = 0; i < size; i++)
 		{
 			int j = i + 1;
@@ -16,8 +17,12 @@ GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string 
 		}
 
 		std::cin >> userInput;
-
-		if (userInput > 0 && userInput <= size)
+		if (userInput == 0)
+		{
+			validInput = true;
+			objectIndex = -1;
+		}
+		else if (userInput > 0 && userInput <= size)
 		{
 			validInput = true;
 			objectIndex = userInput - 1;
@@ -36,8 +41,15 @@ GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string 
 	} while (!validInput);
 
 
-
-	return objects.at(objectIndex);
+	if (objectIndex == -1)
+	{
+		return nullptr;
+	}
+	else 
+	{
+		return objects.at(objectIndex);
+	}
+	
 }
 
 Character* Interface::userCharacterChoice(std::vector<Character*> characters, std::string title)

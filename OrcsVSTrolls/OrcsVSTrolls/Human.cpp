@@ -1,4 +1,6 @@
 #include "Human.h"
+#include "Interface.h"
+#include <string>
 
 //--------------------------------Constructor--------------------------------------------------
 
@@ -47,7 +49,8 @@ void Human::endOfTurn()
 
 Shield* Human::getSelectedShieldPtr()
 {
-	std::cout << "!!IMPLEMENT Human::getSelectedShieldPtr()" << std::endl;
-	return nullptr;
+	Shield* ptr_shield;
+	ptr_shield = Interface::userShieldChoice(m_shields, "Player "+ std::to_string(m_playerIndex)+ ", " + getName() + " : Choose a shield to defend !");
+	return ptr_shield;
 }
 

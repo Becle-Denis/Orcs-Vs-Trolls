@@ -29,7 +29,7 @@ public:
 	std::string getType();
 	void endOfTurn();
 	void gainMana(int manaPoint);
-	void attackCharacter(Character* ptr_defender, Attack* ptr_attack);
+	int getBonusMalusMeleeAttack();
 
 
 

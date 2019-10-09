@@ -25,15 +25,14 @@ std::string Troll::getType()
 	return "TROLL";
 }
 
+int Troll::getBonusMalusMeleeAttack()
+{
+	return 1;
+}
+
 
 
 //--------------------------------Actions---------------------------------------------------
-
-void Troll::attackCharacter(Character* ptr_defender, Attack* ptr_attack)
-{
-	Shield* defenderShield = ptr_defender->getSelectedShieldPtr();
-	ptr_attack->doAttack(this, ptr_defender, defenderShield, 1, 0);
-}
 
 void Troll::gainMana(int manaPoint)
 {
