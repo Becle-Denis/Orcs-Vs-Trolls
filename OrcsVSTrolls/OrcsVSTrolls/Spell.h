@@ -12,10 +12,17 @@
 class Spell : public Attack
 {
 public :
-	virtual void doAttack(Character* attacker, Character* attacked, Shield * shield, int meleeBonusMalus = 0, int magicBonusMalus = 0) = 0;
-	int getManaCost();
+
+	virtual void doAttack(Character* attacker, Character* attacked, Shield * shield, int meleeBonusMalus = 0, int magicBonusMalus = 0);
+
+	//Overrided GameObject functions
+	std::string toString() = 0;
+	std::string toStringDescription() = 0;
 private:
-	int manaCost;
+
+	//pure virtual function
+	virtual void doSpell(Character* attacker, Character* attacked, Shield* shield, int magicBonusMalus = 0) = 0;
+	int m_manaCost;
 };
 
 

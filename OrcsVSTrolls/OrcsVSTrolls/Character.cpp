@@ -203,6 +203,20 @@ Shield* Character::getSelectedShieldPtr()
 	}
 }
 
+void Character::addAttack(Attack* ptr_attack)
+{
+	m_attacks.push_back(ptr_attack);
+}
+
+void Character::addShield(Shield* ptr_shield)
+{
+	m_shields.push_back(ptr_shield);
+}
+
+void Character::selectShield()
+{
+	std::cout << "!!IMPLEMENT Character::selectShield() !!" << std::endl;
+}
 
 
 void Character::endOfTurn()

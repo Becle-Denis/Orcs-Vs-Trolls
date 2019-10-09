@@ -54,6 +54,9 @@ public:
 
 	//Actions 
 	void playTurn(std::vector<Character*> PlayersPtr);
+	virtual void addAttack(Attack* newAttackPtr);
+	virtual void addShield(Shield* newShieldPtr);
+
 
 	//Overrided GameObject functions
 	std::string toString();
@@ -70,7 +73,7 @@ protected:
 	std::vector<Attack*> m_attacks;
 	std::vector<Shield*> m_shields;
 
-	
+	void selectShield();
 	virtual void endOfTurn();
 
 private:
