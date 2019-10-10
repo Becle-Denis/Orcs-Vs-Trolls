@@ -86,12 +86,11 @@ void Character::takeDamage(int damagePoint)
 	{
 		m_lifePoint -= damagePoint;
 		Interface::display(this->toString() + " - " + std::to_string(damagePoint) + " life points");
-	}
-
-	if (m_lifePoint <= 0)
-	{
-		Interface::display(this->toString() + "is dead ! ");
-		m_isAlive = false;
+		if (m_lifePoint <= 0)
+		{
+			Interface::display(this->toString() + " is dead ! ");
+			m_isAlive = false;
+		}
 	}
 }
 

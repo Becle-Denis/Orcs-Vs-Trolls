@@ -12,6 +12,8 @@
 class Spell : public Attack
 {
 public :
+	Spell(int manaCost);
+	~Spell();
 
 	virtual void doAttack(Character* attacker, Character* attacked, Shield * shield, int meleeBonusMalus = 0, int magicBonusMalus = 0);
 

@@ -12,6 +12,18 @@
 /// </summary>
 class FireBall : public Spell
 {
+public:
+
+	FireBall();
+	~FireBall();
+
+
+	//Overrided Spell function 
+	void doSpell(Character* attacker, Character* attacked, Shield* shield, int magicBonusMalus = 0) override;
+
+	//Overrided GameObject functions
+	std::string toString() override;
+	std::string toStringDescription() override;
 };
 
 
