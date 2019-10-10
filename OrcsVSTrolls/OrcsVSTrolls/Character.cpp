@@ -157,15 +157,26 @@ void Character::playTurn(std::vector<Character*> playersPtr)
 	Interface::display("--------Attack Phase--------");
 	Character* ptr_characterToAttack;
 	Attack* ptr_attack;
+	std::vector<Character*> attackableCharactersPtr;
+
+	//selections of attackable characters
+	for (Character* ptr_char : playersPtr)
+	{
+		if (ptr_char->isAlive() && ptr_char != this)
+		{
+			attackableCharactersPtr.push_back(ptr_char);
+		}
+	}
+
 
 	//choose a player to attack
 	if (m_playerIndex != -1)
 	{	//player
-		ptr_characterToAttack = Interface::userCharacterChoice(playersPtr, "Choose a Character to attack");
+		ptr_characterToAttack = Interface::userCharacterChoice(attackableCharactersPtr, "Choose a Character to attack");
 	}
 	else
 	{ //AI
-		ptr_characterToAttack = Ai::aiCharacterChoice(playersPtr);
+		ptr_characterToAttack = Ai::aiCharacterChoice(attackableCharactersPtr);
 	}
 	
 	if (ptr_characterToAttack != nullptr)
