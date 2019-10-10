@@ -1,6 +1,7 @@
 #include "Character.h"
 #include <string>
 #include "Interface.h"
+#include "Ai.h"
 
 int Character::nbOfPlayerCharacters = 0;
 
@@ -13,7 +14,7 @@ Character::Character(std::string name, int lifePoint, int manaPoint, bool player
 {
 	if (playerCharacter)
 	{
-		this->m_playerIndex = nbOfPlayerCharacters;
+		this->m_playerIndex = nbOfPlayerCharacters + 1;
 		nbOfPlayerCharacters++;
 	}
 	else
@@ -158,12 +159,27 @@ void Character::playTurn(std::vector<Character*> playersPtr)
 	Attack* ptr_attack;
 
 	//choose a player to attack
-
-	ptr_characterToAttack = Interface::userCharacterChoice(playersPtr,"Choose a Character to attack");
+	if (m_playerIndex != -1)
+	{	//player
+		ptr_characterToAttack = Interface::userCharacterChoice(playersPtr, "Choose a Character to attack");
+	}
+	else
+	{ //AI
+		ptr_characterToAttack = Ai::aiCharacterChoice(playersPtr);
+	}
+	
 	if (ptr_characterToAttack != nullptr)
 	{
 		//attack 
-		ptr_attack = Interface::userAttackChoice(m_attacks);
+		if (m_playerIndex != -1)
+		{	//player
+			ptr_attack = Interface::userAttackChoice(m_attacks);
+		}
+		else
+		{ //AI
+			ptr_attack = Ai::aiAttackChoice(m_attacks);
+		}
+		
 		attackCharacter(ptr_characterToAttack,ptr_attack);
 
 

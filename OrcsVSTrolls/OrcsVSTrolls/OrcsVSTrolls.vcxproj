@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ai.cpp" />
     <ClCompile Include="Attack.cpp" />
     <ClCompile Include="BigFireBlast.cpp" />
     <ClCompile Include="BigPunch.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Twisted.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ai.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="BigFireBlast.h" />
     <ClInclude Include="BigPunch.h" />

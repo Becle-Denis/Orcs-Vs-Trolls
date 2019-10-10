@@ -1,6 +1,7 @@
 #include "Human.h"
 #include "Interface.h"
 #include <string>
+#include "Ai.h"
 
 //--------------------------------Constructor--------------------------------------------------
 
@@ -50,8 +51,17 @@ void Human::endOfTurn()
 
 Shield* Human::getSelectedShieldPtr()
 {
-	Shield* ptr_shield;
-	ptr_shield = Interface::userShieldChoice(m_shields, "Player "+ std::to_string(m_playerIndex)+ ", " + getName() + " : Choose a shield to defend !");
+	Shield* ptr_shield = nullptr;
+
+	if (m_playerIndex != 1)
+	{	//player
+		ptr_shield = Interface::userShieldChoice(m_shields, "Player " + std::to_string(m_playerIndex) + ", " + getName() + " : Choose a shield to defend !");
+	}
+	else
+	{	//AI
+		ptr_shield = Ai::aiShieldChoice(m_shields);
+	}
+	
 	return ptr_shield;
 }
 
