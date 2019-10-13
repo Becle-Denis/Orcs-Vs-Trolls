@@ -12,6 +12,7 @@
 #include "Game.h"
 #include "Punch.h"
 #include "FireBall.h"
+#include "FireBlast.h"
 
 
 //Testing 
@@ -28,6 +29,9 @@ int main()
 	FireBall f1;
 	FireBall f2;
 	FireBall f3;
+	FireBlast fb1;
+	FireBlast fb2;
+	FireBlast fb3;
 	
 
 	t1.addAttack(&p1);
@@ -37,6 +41,12 @@ int main()
 	t1.addAttack(&f1);
 	t2.addAttack(&f2);
 	t3.addAttack(&f3);
+
+
+	t1.addAttack(&fb1);
+	t2.addAttack(&fb2);
+	t3.addAttack(&fb3);
+
 
 	std::vector<Character*> arr;
 	arr.push_back(&t1);
