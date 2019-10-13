@@ -14,6 +14,7 @@
 #include "FireBall.h"
 #include "FireBlast.h"
 #include "BigPunch.h"
+#include "BigFireBlast.h"
 
 
 //Testing 
@@ -37,7 +38,9 @@ int main()
 	FireBlast fb1;
 	FireBlast fb2;
 	FireBlast fb3;
-	
+	BigFireBlast bfb1;
+	BigFireBlast bfb2;
+	BigFireBlast bfb3;
 
 	t1.addAttack(&p1);
 	t2.addAttack(&p2);
@@ -51,6 +54,10 @@ int main()
 	t1.addAttack(&f1);
 	t2.addAttack(&f2);
 	t3.addAttack(&f3);
+
+	t1.addAttack(&bfb1);
+	t2.addAttack(&bfb2);
+	t3.addAttack(&bfb3);
 
 
 	t1.addAttack(&fb1);

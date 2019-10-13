@@ -13,6 +13,16 @@
 /// </summary>
 class BigFireBlast : public Spell
 {
+public:
+	BigFireBlast();
+	~BigFireBlast();
+
+	//Overrided Spell function 
+	void doSpell(Character* attacker, Character* attacked, Shield* shield, int magicBonusMalus = 0) override;
+
+	//Overrided GameObject functions
+	std::string toString() override;
+	std::string toStringDescription() override;
 };
 
 
