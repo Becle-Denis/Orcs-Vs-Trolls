@@ -1,7 +1,8 @@
 #include "Spell.h"
 #include "Interface.h"
 
-Spell::Spell(int manaCost) :
+Spell::Spell(int manaCost, bool characterNeeded) :
+	Attack(characterNeeded),
 	m_manaCost(manaCost)
 {
 

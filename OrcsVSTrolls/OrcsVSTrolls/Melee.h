@@ -12,6 +12,7 @@
 class Melee : public Attack
 {
 public :
+	Melee(bool characterNeeded = true);
 
 	//Overrided Attack functions
 	virtual void doAttack(Character* attacker, Character* attacked, Shield *  shield, int meleeBonusMalus = 0, int magicBonusMalus = 0) = 0;

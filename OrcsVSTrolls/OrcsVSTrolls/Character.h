@@ -25,12 +25,6 @@ public:
 	/// <param name="manaPoint">Initial ManaPoint of the character</param>
 	Character(std::string name, int lifePoint, int manaPoint, bool playerCharacter = true);
 
-	/// <summary>
-	/// Abstract function, attack another character
-	/// </summary>
-	/// <param name="ptr_defender">Defender</param>
-	/// <param name="ptr_attack">Attack</param>
-	void attackCharacter(Character* ptr_defender, Attack* ptr_attack);
 
 	//pure virtual function
 	virtual std::string getType() = 0;

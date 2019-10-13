@@ -155,7 +155,6 @@ std::string Character::toStringChatacterAttribute()
 void Character::playTurn(std::vector<Character*> playersPtr)
 {
 	Interface::display("--------Attack Phase--------");
-	Character* ptr_characterToAttack;
 	Attack* ptr_attack;
 	std::vector<Character*> attackableCharactersPtr;
 
@@ -168,32 +167,20 @@ void Character::playTurn(std::vector<Character*> playersPtr)
 		}
 	}
 
-
-	//choose a player to attack
+	
+	//attack 
 	if (m_playerIndex != -1)
 	{	//player
-		ptr_characterToAttack = Interface::userCharacterChoice(attackableCharactersPtr, "Choose a Character to attack");
+		ptr_attack = Interface::userAttackChoice(m_attacks);
 	}
 	else
 	{ //AI
-		ptr_characterToAttack = Ai::aiCharacterChoice(attackableCharactersPtr);
+		ptr_attack = Ai::aiAttackChoice(m_attacks);
 	}
-	
-	if (ptr_characterToAttack != nullptr)
-	{
-		//attack 
-		if (m_playerIndex != -1)
-		{	//player
-			ptr_attack = Interface::userAttackChoice(m_attacks);
-		}
-		else
-		{ //AI
-			ptr_attack = Ai::aiAttackChoice(m_attacks);
-		}
 		
-		attackCharacter(ptr_characterToAttack,ptr_attack);
-
-
+	if (ptr_attack != nullptr)
+	{
+		ptr_attack->attack(this, attackableCharactersPtr);
 	}
 	else
 	{
@@ -205,21 +192,6 @@ void Character::playTurn(std::vector<Character*> playersPtr)
 	endOfTurn();
 }
 
-
-void Character::attackCharacter(Character* ptr_defender, Attack* ptr_attack)
-{
-	if (ptr_attack != nullptr)
-	{
-		Interface::display(this->toString() + " attack " + ptr_defender->toString() + " with " + ptr_attack->toString());
-		Shield* defenderShield = ptr_defender->getSelectedShieldPtr();
-		ptr_attack->doAttack(this, ptr_defender, defenderShield,getBonusMalusMeleeAttack(),getBonusMalusMagicAttack());
-	}
-	else
-	{
-		Interface::display(this->toString() + " abort his attack against " + ptr_defender->toString());
-	}
-
-}
 
 
 Shield* Character::getSelectedShieldPtr()

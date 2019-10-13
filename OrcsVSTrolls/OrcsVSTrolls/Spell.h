@@ -12,7 +12,7 @@
 class Spell : public Attack
 {
 public :
-	Spell(int manaCost);
+	Spell(int manaCost, bool characterNeeded = true);
 	~Spell();
 
 	virtual void doAttack(Character* attacker, Character* attacked, Shield * shield, int meleeBonusMalus = 0, int magicBonusMalus = 0);
