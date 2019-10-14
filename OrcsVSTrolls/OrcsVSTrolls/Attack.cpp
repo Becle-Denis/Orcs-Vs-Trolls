@@ -31,18 +31,18 @@ void Attack::attack(Character* attacker, std::vector<Character*> attackableChara
 		
 		if (ptr_defender != nullptr)
 		{
-			Interface::display(attacker->toString() + " attack " + ptr_defender->toString() + " with " + this->toString());
+			Interface::display(attacker->toString() + " attack " + ptr_defender->toString() + " with " + this->toString(),Color::YELLOW);
 			defenderShield = ptr_defender->getSelectedShieldPtr();
 			this->doAttack(attacker, ptr_defender, defenderShield, attacker->getBonusMalusMeleeAttack(), attacker->getBonusMalusMagicAttack());
 		}
 		else
 		{
-			Interface::display(attacker->toString() + " stops " + this->toString());
+			Interface::display(attacker->toString() + " stops " + this->toString(),Color::BLUE);
 		}		
 	}
 	else
 	{
-		Interface::display(attacker->toString() + " call " + this->toString());
+		Interface::display(attacker->toString() + " call " + this->toString(),Color::YELLOW);
 		this->doAttack(attacker, ptr_defender, defenderShield, attacker->getBonusMalusMeleeAttack(), attacker->getBonusMalusMagicAttack());
 	}
 

@@ -11,6 +11,8 @@
 #include <vector>
 #include <string>
 
+enum Color{GREEN = 2, BLUE = 3, RED = 4, YELLOW = 6, WHITE = 7, GRAY = 8, BLUE2 = 9, GREEN2 = 10};
+
 class Interface
 {
 public:
@@ -21,7 +23,7 @@ public:
 	static Shield* userShieldChoice(std::vector<Shield*> shields, std::string title = "Choose a Shield");
 
 	//outputs
-	static void display(std::string string);
+	static void display(std::string string, Color = Color::WHITE);
 	static void clear();
 	static void pause();
 };

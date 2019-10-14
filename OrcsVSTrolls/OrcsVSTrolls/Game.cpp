@@ -31,16 +31,16 @@ void Game::play()
 				Interface::display(this->toString());
 				Interface::display("");
 
-				Interface::display("Turn " + std::to_string(m_tour) + " : " + ptr_char->toString());
+				Interface::display("Turn " + std::to_string(m_tour) + " : " + ptr_char->toString(),Color::BLUE2);
 				if (ptr_char->getIndexPlayer() != -1)
 				{
-					Interface::display("Player " + std::to_string(ptr_char->getIndexPlayer()) + " take Control");
+					Interface::display("Player " + std::to_string(ptr_char->getIndexPlayer()) + " take Control",Color::GRAY);
 				}
 				Interface::pause();
 
 				ptr_char->playTurn(m_characters);
 
-				Interface::display("End of Turn " + std::to_string(m_tour) + " : " + ptr_char->toString());
+				Interface::display("End of Turn " + std::to_string(m_tour) + " : " + ptr_char->toString(), Color::BLUE2);
 				Interface::pause();
 			}
 
@@ -48,7 +48,7 @@ void Game::play()
 		Interface::clear();
 		Interface::display(this->toString());
 		Interface::display("");
-		Interface::display("End of Turn " + std::to_string(m_tour));
+		Interface::display("End of Turn " + std::to_string(m_tour), Color::BLUE2);
 		Interface::pause();
 
 		winner = this->winner();
@@ -57,7 +57,7 @@ void Game::play()
 
 	Interface::clear();
 	Interface::display(this->toString());
-	Interface::display("\nGAME OVER\nWINNER : " + m_characters.at(winner)->toString());
+	Interface::display("\nGAME OVER\nWINNER : " + m_characters.at(winner)->toString(), Color::GREEN2);
 	Interface::pause();
 
 }

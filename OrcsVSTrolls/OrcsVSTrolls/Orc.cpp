@@ -45,7 +45,7 @@ void Orc::gainMana(int manaPoint)
 		{
 			manaPoint = 10 - m_manaPoint;
 		}
-		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points");
+		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points",Color::GREEN);
 		m_manaPoint += manaPoint;
 	}
 }

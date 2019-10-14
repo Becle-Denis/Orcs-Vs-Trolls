@@ -67,7 +67,7 @@ void Character::gainHealth(int healthPoint)
 	if (healthPoint > 0)
 	{
 		m_lifePoint += healthPoint;
-		Interface::display(this->toString() + " + " + std::to_string(healthPoint) + " life points");
+		Interface::display(this->toString() + " + " + std::to_string(healthPoint) + " life points",Color::GREEN2);
 	}
 }
 
@@ -76,7 +76,7 @@ void Character::gainMana(int manaPoint)
 	if (manaPoint > 0)
 	{
 		m_manaPoint += manaPoint;
-		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points");
+		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points",Color::GREEN);
 	}
 
 }
@@ -86,7 +86,7 @@ void Character::takeDamage(int damagePoint)
 	if (damagePoint > 0)
 	{
 		m_lifePoint -= damagePoint;
-		Interface::display(this->toString() + " - " + std::to_string(damagePoint) + " life points");
+		Interface::display(this->toString() + " - " + std::to_string(damagePoint) + " life points",Color::RED);
 		if (m_lifePoint <= 0)
 		{
 			Interface::display(this->toString() + " is dead ! ");
@@ -104,7 +104,7 @@ bool Character::spendMana(int manaPoint)
 	else if (manaPoint >= 0)
 	{
 		m_manaPoint -= manaPoint;
-		Interface::display(this->toString() + " - " + std::to_string(manaPoint) + " mana points");
+		Interface::display(this->toString() + " - " + std::to_string(manaPoint) + " mana points",Color::RED);
 		return true;
 	}
 	return false;
@@ -184,7 +184,7 @@ void Character::playTurn(std::vector<Character*> playersPtr)
 	}
 	else
 	{
-		Interface::display(this->toString() + " want to be nice and don't attack this turn");
+		Interface::display(this->toString() + " want to be nice and don't attack this turn",Color::YELLOW);
 	}
 
 	//end of turn 
@@ -216,10 +216,6 @@ void Character::addShield(Shield* ptr_shield)
 	m_shields.push_back(ptr_shield);
 }
 
-void Character::selectShield()
-{
-	std::cout << "!!IMPLEMENT Character::selectShield() !!" << std::endl;
-}
 
 
 void Character::endOfTurn()

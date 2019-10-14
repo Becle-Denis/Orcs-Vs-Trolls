@@ -67,7 +67,6 @@ protected:
 	std::vector<Attack*> m_attacks;
 	std::vector<Shield*> m_shields;
 
-	void selectShield();
 	virtual void endOfTurn();
 
 private:

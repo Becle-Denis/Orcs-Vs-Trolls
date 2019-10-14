@@ -44,7 +44,7 @@ void Troll::gainMana(int manaPoint)
 		{
 			manaPoint = 5 - m_manaPoint;
 		}
-		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points");
+		Interface::display(this->toString() + " + " + std::to_string(manaPoint) + " mana points",Color::GREEN);
 		m_manaPoint += manaPoint;
 	}
 

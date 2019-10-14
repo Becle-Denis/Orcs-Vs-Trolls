@@ -17,11 +17,11 @@ void Spell::doAttack(Character* attacker, Character* attacked, Shield* shield, i
 {
 	if (attacker->spendMana(m_manaCost))
 	{
-		Interface::display(attacker->toString() + " invoque " + this->toString());
+		Interface::display(attacker->toString() + " invoque " + this->toString(),Color::YELLOW);
 		this->doSpell(attacker,attacked,shield,magicBonusMalus);
 	}
 	else
 	{
-		Interface::display("Fail of "+this->toString()+", "+attacker->toString()+" is not rich");
+		Interface::display("Fail of "+this->toString()+", "+attacker->toString()+" is not rich",Color::RED);
 	}
 }

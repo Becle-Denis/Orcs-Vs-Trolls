@@ -2,9 +2,13 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <Windows.h>
 
 GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string title)
 {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, Color::GRAY);
+
 	int objectIndex;
 	int size = static_cast<int>(objects.size());
 
@@ -90,10 +94,13 @@ Shield* Interface::userShieldChoice(std::vector<Shield*> shields, std::string ti
 	return static_cast<Shield*>(userChoice(objects, title));
 }
 
-void Interface::display(std::string string)
+void Interface::display(std::string string, Color color)
 {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, color);
 	std::cout << string << std::endl;
 	std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	SetConsoleTextAttribute(hConsole, Color::GRAY);
 }
 
 void Interface::clear()
