@@ -17,6 +17,7 @@
 #include "BigFireBlast.h"
 #include "IceBall.h"
 #include "Regeneration.h"
+#include "RegenerationSpell.h"
 
 
 //Testing 
@@ -50,6 +51,10 @@ int main()
 	Regeneration r1;
 	Regeneration r2;
 	Regeneration r3;
+
+	RegenerationSpell rs1;
+	RegenerationSpell rs2;
+	RegenerationSpell rs3;
 	
 
 	t1.addAttack(&p1);
@@ -81,6 +86,10 @@ int main()
 	t1.addAttack(&r1);
 	t2.addAttack(&r2);
 	t3.addAttack(&r3);
+
+	t1.addAttack(&rs1);
+	t2.addAttack(&rs2);
+	t3.addAttack(&rs3);
 
 	std::vector<Character*> arr;
 	arr.push_back(&t1);
