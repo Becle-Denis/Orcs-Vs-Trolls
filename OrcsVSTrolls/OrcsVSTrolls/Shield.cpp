@@ -30,7 +30,7 @@ void Shield::gainLife(int lifePoint)
 {
 	if (lifePoint > 0)
 	{
-		Interface::display(this->toString() + " + " + std::to_string(lifePoint) + " life points");
+		Interface::display(this->toString() + " + " + std::to_string(lifePoint) + " life points",Color::BLUE2);
 		m_livePoint += lifePoint;
 	}
 }
@@ -39,13 +39,13 @@ void Shield::takeDamage(int damagePoint)
 {
 	if (damagePoint > 0)
 	{
-		Interface::display(this->toString() + " - " + std::to_string(damagePoint) + " life points");
+		Interface::display(this->toString() + " - " + std::to_string(damagePoint) + " life points",Color::RED);
 		m_livePoint -= damagePoint;
 	}
 
 	if (m_livePoint <= 0)
 	{
-		Interface::display(this->toString() + " is destroyed");
+		Interface::display(this->toString() + " is destroyed",Color::RED);
 		m_destroyed = true;
 	}
 }
@@ -56,12 +56,12 @@ int Shield::defend(int& meleeAttackPoint, int& magicAttackPoint, int directShiel
 {
 	if (this->isWorking())
 	{
-		Interface::display(this->toString() + " protect");
+		Interface::display(this->toString() + " protect",Color::YELLOW);
 		return this->protect(meleeAttackPoint, magicAttackPoint, directShieldDamage);
 	}
 	else 
 	{
-		Interface::display(this->toString() + " is destroyed or cancelled");
+		Interface::display(this->toString() + " is destroyed or cancelled",Color::RED);
 		return 0;
 	}
 }

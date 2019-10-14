@@ -21,6 +21,7 @@
 #include "Tap.h"
 #include "IronShield.h"
 #include "Twisted.h"
+#include "HalfMagicShield.h"
 
 
 
@@ -44,8 +45,8 @@ int main()
 	Troll t3; 
 
 	//shield creation
-	IronShield s1;
-	IronShield s2;
+	HalfMagicShield s1;
+	HalfMagicShield s2;
 	IronShield s3;
 
 	t1.addShield(&s1);
