@@ -23,9 +23,16 @@
 #include "Twisted.h"
 
 
+
+
+
 //Testing 
 int main()
 {
+
+	std::cout << "---------- Orcs Vs Troll V1 ----------" << std::endl;
+	std::cout << "You are a troll" << std::endl;
+	system("PAUSE");
 
 	//Character creation
 	Orc t1;

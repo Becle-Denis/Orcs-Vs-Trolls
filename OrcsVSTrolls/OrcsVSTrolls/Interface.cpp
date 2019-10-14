@@ -1,5 +1,7 @@
 #include "Interface.h"
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 GameObject* Interface::userChoice(std::vector<GameObject*> objects, std::string title)
 {
@@ -91,6 +93,7 @@ Shield* Interface::userShieldChoice(std::vector<Shield*> shields, std::string ti
 void Interface::display(std::string string)
 {
 	std::cout << string << std::endl;
+	std::this_thread::sleep_for(std::chrono::milliseconds(100));
 }
 
 void Interface::clear()
