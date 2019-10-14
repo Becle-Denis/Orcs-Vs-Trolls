@@ -53,7 +53,7 @@ Shield* Human::getSelectedShieldPtr()
 {
 	Shield* ptr_shield = nullptr;
 
-	if (m_playerIndex != 1)
+	if (m_playerIndex != -1)
 	{	//player
 		ptr_shield = Interface::userShieldChoice(m_shields, "Player " + std::to_string(m_playerIndex) + ", " + getName() + " : Choose a shield to defend !");
 	}

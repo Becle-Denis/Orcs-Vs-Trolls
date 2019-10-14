@@ -7,12 +7,25 @@
 
 /// <summary>
 /// Basic Iron shield 
-/// -60% on all Melee attack 
-/// -10% on all magic attack 
+/// -2 on all Melee attack 
+/// -1 on all magic attack 
 /// 20 PV 
 /// </summary>
 class IronShield : public Shield
 {
+public:
+	IronShield();
+	~IronShield();
+
+	//Overrided GameObject functions
+	std::string toString() override;
+	std::string toStringDescription() override;
+
+protected:
+	//Overrided Shield function
+	int protect(int& meleeAttackPoint, int& magicAttackPoint, int directShieldDamage) override;
+
+
 };
 
 #endif // !IRONSHIELD

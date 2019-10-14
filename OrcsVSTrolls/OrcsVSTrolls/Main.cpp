@@ -19,6 +19,7 @@
 #include "Regeneration.h"
 #include "RegenerationSpell.h"
 #include "Tap.h"
+#include "IronShield.h"
 
 
 //Testing 
@@ -30,6 +31,14 @@ int main()
 	Human t2;
 	Troll t3("Denis"); //player
 
+	//shield creation
+	IronShield s1;
+	IronShield s2;
+	IronShield s3;
+
+	t1.addShield(&s1);
+	t2.addShield(&s2);
+	t3.addShield(&s3);
 
 	//attack creation
 	Punch p1;
