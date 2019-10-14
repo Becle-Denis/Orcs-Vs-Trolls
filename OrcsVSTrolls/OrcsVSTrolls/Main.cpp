@@ -15,6 +15,7 @@
 #include "FireBlast.h"
 #include "BigPunch.h"
 #include "BigFireBlast.h"
+#include "IceBall.h"
 
 
 //Testing 
@@ -31,6 +32,9 @@ int main()
 	BigPunch bp1;
 	BigPunch bp2;
 	BigPunch bp3;
+	IceBall i1;
+	IceBall i2;
+	IceBall i3;
 
 	FireBall f1;
 	FireBall f2;
@@ -41,6 +45,7 @@ int main()
 	BigFireBlast bfb1;
 	BigFireBlast bfb2;
 	BigFireBlast bfb3;
+	
 
 	t1.addAttack(&p1);
 	t2.addAttack(&p2);
@@ -64,11 +69,15 @@ int main()
 	t2.addAttack(&fb2);
 	t3.addAttack(&fb3);
 
+	t1.addAttack(&i1);
+	t2.addAttack(&i2);
+	t3.addAttack(&i3);
 
 	std::vector<Character*> arr;
 	arr.push_back(&t1);
 	arr.push_back(&t2);
 	arr.push_back(&t3);
+
 
 	Game game(arr);
 	game.play();
