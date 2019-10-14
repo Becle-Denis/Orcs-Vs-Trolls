@@ -32,7 +32,9 @@ int main()
 {
 
 	std::cout << "---------- Orcs Vs Troll V1 ----------" << std::endl;
-	std::cout << "You are an orc" << std::endl;
+	std::cout << "--------------------------------------" << std::endl;
+	std::cout << "You are an ORC" << std::endl;
+	std::cout << "--------------------------------------" << std::endl;
 	std::cout << "Troll regenerate 1 life point each turn, Melee attack +1" << std::endl;
 	std::cout << "Orc regenerate 3 mana point each turn, Magic attack +1" << std::endl;
 	std::cout << "Human are smart and can choose their shield just before being attacked" << std::endl;
