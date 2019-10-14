@@ -24,33 +24,34 @@
 int main()
 {
 
-	Orc t1("DENS");
+	Orc t1;
 	Human t2;
-	Troll t3("Pierre");
+	Troll t3("Denis");
 
 	Punch p1;
 	Punch p2;
 	Punch p3;
+
 	BigPunch bp1;
 	BigPunch bp2;
 	BigPunch bp3;
-	IceBall i1;
-	IceBall i2;
+
+	Regeneration r1;
+	Regeneration r2;
+	Regeneration r3;
+
 	IceBall i3;
 
 	FireBall f1;
 	FireBall f2;
 	FireBall f3;
+
 	FireBlast fb1;
 	FireBlast fb2;
 	FireBlast fb3;
+
 	BigFireBlast bfb1;
 	BigFireBlast bfb2;
-	BigFireBlast bfb3;
-
-	Regeneration r1;
-	Regeneration r2;
-	Regeneration r3;
 
 	RegenerationSpell rs1;
 	RegenerationSpell rs2;
@@ -72,15 +73,12 @@ int main()
 
 	t1.addAttack(&bfb1);
 	t2.addAttack(&bfb2);
-	t3.addAttack(&bfb3);
 
 
 	t1.addAttack(&fb1);
 	t2.addAttack(&fb2);
 	t3.addAttack(&fb3);
 
-	t1.addAttack(&i1);
-	t2.addAttack(&i2);
 	t3.addAttack(&i3);
 
 	t1.addAttack(&r1);
