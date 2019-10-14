@@ -42,6 +42,7 @@ void Attack::attack(Character* attacker, std::vector<Character*> attackableChara
 	}
 	else
 	{
+		Interface::display(attacker->toString() + " call " + this->toString());
 		this->doAttack(attacker, ptr_defender, defenderShield, attacker->getBonusMalusMeleeAttack(), attacker->getBonusMalusMagicAttack());
 	}
 

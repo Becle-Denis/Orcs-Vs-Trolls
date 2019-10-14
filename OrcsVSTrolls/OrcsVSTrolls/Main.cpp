@@ -16,6 +16,7 @@
 #include "BigPunch.h"
 #include "BigFireBlast.h"
 #include "IceBall.h"
+#include "Regeneration.h"
 
 
 //Testing 
@@ -45,6 +46,10 @@ int main()
 	BigFireBlast bfb1;
 	BigFireBlast bfb2;
 	BigFireBlast bfb3;
+
+	Regeneration r1;
+	Regeneration r2;
+	Regeneration r3;
 	
 
 	t1.addAttack(&p1);
@@ -72,6 +77,10 @@ int main()
 	t1.addAttack(&i1);
 	t2.addAttack(&i2);
 	t3.addAttack(&i3);
+
+	t1.addAttack(&r1);
+	t2.addAttack(&r2);
+	t3.addAttack(&r3);
 
 	std::vector<Character*> arr;
 	arr.push_back(&t1);
