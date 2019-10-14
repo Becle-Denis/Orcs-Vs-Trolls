@@ -20,6 +20,7 @@
 #include "RegenerationSpell.h"
 #include "Tap.h"
 #include "IronShield.h"
+#include "Twisted.h"
 
 
 //Testing 
@@ -52,6 +53,10 @@ int main()
 	BigPunch bp1;
 	BigPunch bp2;
 	BigPunch bp3;
+
+	Twisted tw1;
+	Twisted tw2;
+	Twisted tw3;
 
 	Regeneration r1;
 	Regeneration r2;
@@ -88,6 +93,10 @@ int main()
 	t1.addAttack(&bp1);
 	t2.addAttack(&bp2);
 	t3.addAttack(&bp3);
+
+	t1.addAttack(&tw1);
+	t2.addAttack(&tw2);
+	t3.addAttack(&tw3);
 
 	t1.addAttack(&r1);
 	t2.addAttack(&r2);
